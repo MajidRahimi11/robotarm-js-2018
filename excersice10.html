@@ -1,0 +1,33 @@
+
+<!-- saved from url=(0084)file:///C:/Users/Majid%20Rahimi/Documents/RobotArm/robotarm-js-2018/excersice10.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"></head><body>
+        <canvas id="canvas" width="800" height="600"></canvas>
+        <script src="./excersice10_files/robot-arm.js.download"></script>
+        <script>
+            // Robotarm bibliotheek inladen
+            var canvas = document.getElementById("canvas");
+            var robotArm = new RobotArm(canvas);
+            robotArm.speed = 1000;
+            
+            // Het level inladen
+            robotArm.loadLevel("exercise 10");
+            
+            // Jou instructies volgen hier
+           for(var a=9; a>0; a--){
+           robotArm.grab();
+           for(var i=0; i<a; i++){
+            robotArm.moveRight();
+           }
+           robotArm.drop();
+           a--;
+           for(var i=0; i<a; i++){
+            robotArm.moveLeft();
+           }
+       }
+  
+            
+            // De door jou opgegeven instructies uitvoeren
+            robotArm.run();
+        </script>
+    
+</body></html>
